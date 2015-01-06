@@ -22,3 +22,12 @@ Feature: Starting the game
     When I fill in "name" with "" 
     And I click submit
     Then I should see "What's your name?" 
+
+  Scenario: Both player have entered a name
+    Given I am on the newgame page
+    When I fill in "name" with "Ptolemy"
+    Then I press "submit"
+    When I fill in "p2name" with "Clint"
+    Then I press "ptwosubmit"
+    Then I should see "Man your battle stations!!!"
+    Then I follow "Man your battle stations!!!"

@@ -5,6 +5,11 @@
     font-size: 50px;
   }
 
+  #start {
+    color: blue;
+    font-size: 50px;
+  }
+
 </style>
 
 <%if @name && !@name.empty? %> 
@@ -37,4 +42,8 @@
 
 
   </form>
+<% end %>
+
+<% if (@name && !@name.empty?) && (@p2name && !@p2name.empty?) %>
+  <a href="/fleetlauncher"><p id="start"> Man your battle stations!!! </p></a>
 <% end %>

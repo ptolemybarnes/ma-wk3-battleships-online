@@ -16,6 +16,9 @@ module NavigationHelpers
     when /the newgame page/
       '/newgame'
 
+    when /the fleetlauncher page/
+      '/fleetlauncher'
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
