@@ -7,3 +7,6 @@ Feature: Starting the game
     Given I am on the homepage
     When I follow "New Game"
     Then I should see "What's your name?"
+    Then I enter Ptolemy
+    Then I click submit
+    And I see Welcome, Ptolemy. You have been registered for the game.

@@ -1,0 +1,21 @@
+<style>
+
+  #greeting {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+  }
+
+</style>
+
+<%if @name %>
+  <p id="greeting">Welcome, <%= @name %>. You have been registered for the game.</p>
+
+<% else %>
+  <form action="/newgame">
+  <p>What's your name?</p>
+  <input type="text" name="name">
+  <input type="submit" class="submit_name" value="submit">
+  </form>
+<% end %>
+
