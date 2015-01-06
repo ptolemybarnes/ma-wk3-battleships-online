@@ -10,3 +10,9 @@ Feature: Starting the game
     Then I enter Ptolemy
     Then I click submit
     And I see Welcome, Ptolemy. You have been registered for the game.
+
+  Scenario: Player did not enter any name
+    Given I am on the newgame page
+    When I fill in "name" with "" 
+    And I click submit
+    Then I should see "What's your name?" 

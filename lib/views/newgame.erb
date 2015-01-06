@@ -7,7 +7,7 @@
 
 </style>
 
-<%if @name %>
+<%if @name && !@name.empty? %> 
   <p id="greeting">Welcome, <%= @name %>. You have been registered for the game.</p>
 
 <% else %>
