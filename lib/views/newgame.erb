@@ -13,8 +13,28 @@
 <% else %>
   <form action="/newgame">
   <p>What's your name?</p>
+  
   <input type="text" name="name">
+  <input type="hidden" name="p2name" value="<%= params[:p2name] %>">
+
   <input type="submit" class="submit_name" value="submit">
+  
+
   </form>
 <% end %>
 
+<%if @p2name && !@p2name.empty? %>
+  <p id="greeting">Welcome, <%= @p2name %>. You have been registered for the game.</p>
+
+<% else %>
+  <form action="/newgame">
+  <p>What's your name?</p>
+
+  <input type="text" name="p2name">
+  <input type="hidden" name="name" value="<%= params[:name] %>">
+
+  <input type="submit" class="submit_name" value="ptwosubmit">
+
+
+  </form>
+<% end %>

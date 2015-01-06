@@ -6,7 +6,8 @@ class BattleShips < Sinatra::Base
   end
 
   get '/newgame' do
-    @name = params[:name]
+    @name   = params[:name]
+    @p2name = params[:p2name]
     erb :newgame
   end
 
