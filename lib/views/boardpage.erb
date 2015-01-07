@@ -12,9 +12,12 @@
   <tr>
       <% slice.each do |key|%>
       <td>
-        <div id="<%= key.to_s %>" >
-        <img src="./images/water.gif">
-        </div>
+        <form action="/boardpage">
+        
+        <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot">
+        
+        </form>
+
         </td>
         <%end%>
   </tr>
@@ -24,6 +27,9 @@
 
   </div>
 
+<% if params[:shot] %>
+You MISS!
+<% end %>
 </body>
 
 </html>
