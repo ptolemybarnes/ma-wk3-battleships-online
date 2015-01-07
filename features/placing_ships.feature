@@ -8,5 +8,8 @@ Feature: Placing the ships
     When I choose "coords" within "A1"
     And I choose "direction" within "horizontal"
 
+  Scenario: Player 1 has placed aircraft carrier
+    Given I am on the board page having placed aircraft carrier
+    Then I should observe an aircraftcarrier
     
 

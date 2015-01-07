@@ -18,6 +18,9 @@ module NavigationHelpers
 
     when /the fleetlauncher page/
       '/fleetlauncher'
+
+    when /the board page having placed aircraft carrier/
+      '/boardpage?coords=A1&direction=horizontal'
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
