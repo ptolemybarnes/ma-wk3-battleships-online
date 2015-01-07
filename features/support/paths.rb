@@ -19,6 +19,9 @@ module NavigationHelpers
     when /the fleetlauncher page/
       '/fleetlauncher'
 
+    when /the boardpage$/
+      '/boardpage'
+
     when /the board page having placed aircraft carrier/
       '/boardpage?coords=A1&direction=horizontal'
       

@@ -19,11 +19,9 @@ class BattleShips < Sinatra::Base
   end
 
   get '/boardpage' do
-    ship  = Ship.aircraft_carrier
-    board = Board.new(Cell)
-    orientation = params[:direction] == "horizontal" ? :horizontally : :vertically
-    board.place(ship, params[:coords].to_sym, orientation)
-    erb :boardpage
+   board = Board.new(Cell)
+   @keys = board.grid.keys
+   erb :boardpage
   end
   
   # start the server if ruby file executed directly

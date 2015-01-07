@@ -1,16 +1,29 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
 
-  .aircraftcarrier {
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    color: black;
-  }
+</head>
 
-  .aircraftcarrier:hover {
-    color: red;
-  }
+<body>
 
-</style>
+  <div id="board">
+<table>
+    <% @keys.each_slice(10) do |slice| %>
+  <tr>
+      <% slice.each do |key|%>
+      <td>
+        <div id="<%= key.to_s %>" >
+        <img src="./images/water.gif">
+        </div>
+        </td>
+        <%end%>
+  </tr>
+      <%end%>
 
-<div class="aircraftcarrier">A1</div>
+  </table>
+
+  </div>
+
+</body>
+
+</html>
