@@ -19,7 +19,7 @@ module NavigationHelpers
     when /the fleetlauncher page/
       '/fleetlauncher'
 
-    when /the boardpage$/
+    when /the board page$/
       '/boardpage'
 
     when /the board page having placed an aircraft carrier/

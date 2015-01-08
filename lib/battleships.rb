@@ -49,8 +49,14 @@ class BattleShips < Sinatra::Base
     rescue RuntimeError
       params[:same_shot_error] = true 
     end
+      redirect to('/victory') unless board.floating_ships?
+
       query = params.map{|key, value| "#{key}=#{value}"}.join("&")
       redirect to("/boardpage?#{query}")
+  end
+
+  get '/victory' do
+    "ALL ENEMY SHIPS SUNK, YOU WIN!"
   end
 
   # start the server if ruby file executed directly
