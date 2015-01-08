@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'ship'
 require_relative 'board'
 require_relative 'cell'
+require_relative 'water'
 
 class BattleShips < Sinatra::Base
   get '/' do
@@ -20,7 +21,12 @@ class BattleShips < Sinatra::Base
 
   get '/boardpage' do
    @board = Board.new(Cell)
-   @id = @board.object_id
+   @board.grid.each {|coord, cell| cell.content = Water.new }
+
+     if params[:shot]
+      @board.shoot_at(params[:shot].to_sym)
+     end
+
    @keys = @board.grid.keys
    erb :boardpage
   end
