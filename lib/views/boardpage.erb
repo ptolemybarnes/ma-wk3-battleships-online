@@ -5,31 +5,28 @@
 
 <body>
 
+<%= @id %>
+
  <div id="board">
   
   <table style="width: 100%">
     <% @keys.each_slice(10) do |slice| %>
-    <tr>
-      <% slice.each do |key|%>
-      <td>
-        <form action="/boardpage">
-        
-        <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot" style="width: 100%">
-        
-        </form>
-
-      </td>
+      <tr>
+        <% slice.each do |key|%>
+        <td>
+          <form action="/boardpage">
+            <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot" style="width: 100%">
+          </form>
+        </td>
         <%end%>
-  </tr>
-      <%end%>
-
+      </tr>
+    <%end%>
   </table>
-
-  </div>
+ </div>
 
 <% if params[:shot] %>
-You MISS!
+  You MISS!
 <% end %>
-</body>
 
+</body>
 </html>

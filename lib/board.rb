@@ -19,7 +19,7 @@ class Board
 	end
 
 	def shoot_at(coordinate)
-		raise "You cannot hit the same square twice" if  grid[coordinate].hit?
+		raise "You cannot hit the same square twice" if grid[coordinate].hit?
 		grid[coordinate].shoot
 	end
 
