@@ -5,7 +5,11 @@
 
 <body>
 
-<%= @id %>
+<% if params[:same_shot_error] %>
+  You can't shoot at the same cell twice!
+<% elsif params[:miss_shot] %>
+  You MISS!
+<% end %>
 
  <div id="board">
   
@@ -14,8 +18,8 @@
       <tr>
         <% slice.each do |key|%>
         <td>
-          <form action="/boardpage">
-            <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot" style="width: 100%">
+          <form action="/boardpage" method='post'>
+            <input type="image" id="<%= key.to_s %>" src="/images/water.gif" value="<%= key.to_s %>" name="shot" style="width: 100%">
           </form>
         </td>
         <%end%>
@@ -24,9 +28,7 @@
   </table>
  </div>
 
-<% if params[:shot] %>
-  You MISS!
-<% end %>
+
 
 </body>
 </html>
