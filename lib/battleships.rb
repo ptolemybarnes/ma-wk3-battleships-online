@@ -19,8 +19,9 @@ class BattleShips < Sinatra::Base
   end
 
   get '/boardpage' do
-   board = Board.new(Cell)
-   @keys = board.grid.keys
+   @board = Board.new(Cell)
+   @id = @board.object_id
+   @keys = @board.grid.keys
    erb :boardpage
   end
   

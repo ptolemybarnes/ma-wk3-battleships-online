@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 </head>
 
 <body>
 
-  <div id="board">
-<table>
+ <div id="board">
+  
+  <table style="width: 100%">
     <% @keys.each_slice(10) do |slice| %>
-  <tr>
+    <tr>
       <% slice.each do |key|%>
       <td>
         <form action="/boardpage">
         
-        <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot">
+        <input type="image" id="<%= key.to_s %>" src="./images/water.gif" value="<%= key.to_s %>" name="shot" style="width: 100%">
         
         </form>
 
-        </td>
+      </td>
         <%end%>
   </tr>
       <%end%>

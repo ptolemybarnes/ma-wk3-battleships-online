@@ -12,3 +12,9 @@ Feature: interact with board
     Then I should not see "You MISS!"
     When I shoot at a cell "F5"
     Then I should see "You MISS!"
+
+  Scenario: Shoot at the same cell twice
+    Given I am on the boardpage
+    Then I shoot at a cell "C1"
+    And I shoot at a cell "C1"
+    Then I should see "You can't shoot at the same cell twice!"
