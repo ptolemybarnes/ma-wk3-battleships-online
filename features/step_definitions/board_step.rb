@@ -5,3 +5,7 @@ end
 When(/^I shoot at a cell "(.*?)"$/) do |arg1|
   find("##{arg1}").click
 end
+
+When(/^I shoot at a cell "(.*?)" with ship$/) do |arg1|
+  find("##{arg1}").click
+end

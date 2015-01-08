@@ -18,3 +18,14 @@ Feature: interact with board
     Then I shoot at a cell "C1"
     And I shoot at a cell "C1"
     Then I should see "You can't shoot at the same cell twice!"
+
+
+
+  Scenario: Shoot at Ships
+    Given I am on the fleetlauncher page
+    When I choose "coords" within "A1"
+    And I choose "direction" within "horizontal"
+    And I press "submit"
+    When I shoot at a cell "A1" with ship
+    Then I should see "Hit"
+

@@ -7,3 +7,5 @@ Feature: Placing the ships
     Given I am on the fleetlauncher page
     When I choose "coords" within "A1"
     And I choose "direction" within "horizontal"
+
+  Scenario: 
