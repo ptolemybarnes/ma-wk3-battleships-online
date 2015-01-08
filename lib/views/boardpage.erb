@@ -5,10 +5,15 @@
 
 <body>
 
-<% if params[:same_shot_error] %>
+<% if params[:same_shot_error] == "true" %>
   You can't shoot at the same cell twice!
-<% elsif params[:miss_shot] %>
+
+<% elsif params[:miss_shot] == "true" %>
   You MISS!
+
+<% elsif params[:miss_shot] == "false" %>
+  Hit
+
 <% end %>
 
  <div id="board">

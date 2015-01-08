@@ -22,8 +22,8 @@ module NavigationHelpers
     when /the boardpage$/
       '/boardpage'
 
-    when /the board page having placed aircraft carrier/
-      '/boardpage?coords=A1&direction=horizontal'
+    when /the board page having placed an aircraft carrier/
+      '/boardset?coords=A1&direction=horizontal'
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

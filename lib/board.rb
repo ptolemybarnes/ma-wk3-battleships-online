@@ -31,7 +31,7 @@ class Board
 		ships.count
 	end
 
-private
+# private
 
  	def next_coord(coord, orientation)
 		orientation == :vertically ? next_vertical(coord) : coord.next
