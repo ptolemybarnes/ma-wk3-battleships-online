@@ -16,14 +16,17 @@ module NavigationHelpers
     when /the newgame page/
       '/newgame'
 
-    when /the fleetlauncher page/
+    when /the fleetlauncher page$/
       '/fleetlauncher'
+
+    when /the fleet launcher page to place an aircraft carrier$/
+      'fleetlauncher'
 
     when /the board page$/
       '/boardpage'
 
     when /the board page having placed an aircraft carrier/
-      '/boardset?coords=A1&direction=horizontal'
+      '/boardset?coords=A1&direction=horizontally&shiptype=Aircraftcarrier'
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

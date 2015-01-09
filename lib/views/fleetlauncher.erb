@@ -1,9 +1,12 @@
 <form action="/boardset" method="get">
-  <input type="radio" name="coords" value="A1">A1<br>
+  <input type="radio" id="A1" name="coords" value="A1">A1<br>
   <input type="radio" name="coords" value="B1">B1<br>
 <br>
-  <input type="radio" name="direction" value="horizontally">horizontal<br>
-  <input type="radio" name="direction" value="vertically">vertical<br>
+  <input type="radio" id="horizontally" name="direction" value="horizontally">horizontally<br>
+  <input type="radio" name="direction" value="vertically">vertically<br>
+
+  <input type="hidden" name="shiptype" value="Aircraftcarrier">
+
   <input type="submit" value="submit">
 </form>
 

@@ -9,13 +9,17 @@ require 'byebug'
 class BattleShips < Sinatra::Base
   set :public_dir, Proc.new{File.join(root, '..', "public")}
   set :public_folder, 'public'
-
-
   enable :sessions
+  
 
   game = Game.new
   board = Board.new(Cell)
   board.grid.each {|coord, cell| cell.content = Water.new }
+  fleet1 = {"Aircraftcarrier" => Ship.aircraft_carrier,
+            "Battleship"      => Ship.battleship, 
+            "Destroyer"       => Ship.destroyer, 
+            "Submarine"       => Ship.submarine, 
+            "Patrolboat"      => Ship.patrol_boat}
 
   get '/' do
     erb :index
@@ -32,7 +36,8 @@ class BattleShips < Sinatra::Base
   end
 
   get '/boardset' do
-    board.place(Ship.aircraft_carrier, params[:coords].to_sym, params[:direction].to_sym)
+    type = fleet1[params[:shiptype]]
+    board.place(type, params[:coords].to_sym, params[:direction].to_sym)
     redirect to('/boardpage')
   end
 
